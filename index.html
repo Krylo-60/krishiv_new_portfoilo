@@ -1,19 +1,31 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Krishiv P B | Home</title>
+  <title>Krishiv P B | Grade 6 Developer & Gaming YouTuber</title>
+  <meta name="description" content="Portfolio of Krishiv P B, a Grade 6 student developer and gaming YouTuber building web projects and sharing coding progress." />
+  <meta property="og:title" content="Krishiv P B | Developer & Gaming YouTuber" />
+  <meta property="og:description" content="Web projects, coding skills, and gaming content by Krishiv P B." />
+  <meta property="og:type" content="website" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <div class="page-loader" id="pageLoader" aria-hidden="true">
+    <div class="loader-ring"></div>
+  </div>
+  <div class="spotlight" id="spotlight" aria-hidden="true"></div>
+
   <header class="site-header">
     <div class="container nav-wrap">
       <a class="brand" href="#home">Krishiv P B</a>
       <nav aria-label="Main navigation">
         <ul class="nav-links">
           <li><a class="active" href="#home">Home</a></li>
+          <li><a href="#results">Results</a></li>
+          <li><a href="#skills">Skills</a></li>
           <li><a href="#projects">Projects</a></li>
+          <li><a href="#learning">Learning</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
@@ -24,30 +36,55 @@
     <section id="home" class="hero section-pad">
       <div class="container hero-grid">
         <div>
-          <p class="tag">High School Student • Creator</p>
-          <h1>Krishiv P B</h1>
+          <p class="tag">Grade 6 Student Developer & Gaming YouTuber</p>
+          <h1>Building Cool Web Projects and Gaming Content</h1>
           <p class="lead">
-            I love coding, building useful projects, and sharing my progress on YouTube.
-            My goal is to become a strong full-stack developer.
+            I create student-friendly web apps, improve my JavaScript skills every week, and publish gaming and tech content on YouTube.
           </p>
           <div class="hero-buttons">
-            <a class="btn primary" href="#projects">See Projects</a>
-            <a class="btn" href="#skills">My Skills</a>
+            <a class="btn primary" href="#projects">View Projects</a>
+            <a class="btn" href="https://www.youtube.com/@KryloBlox60" target="_blank" rel="noopener noreferrer">Watch YouTube</a>
           </div>
         </div>
         <aside class="hero-card">
           <img class="profile-image" src="myimage.png" alt="Krishiv P B profile photo" />
+          <p><strong>Focus:</strong> Frontend projects, JavaScript, and gaming content</p>
+          <p><strong>Goal:</strong> Become a strong full-stack developer</p>
+          <p><strong>Location:</strong> Student Creator Portfolio</p>
         </aside>
       </div>
     </section>
 
+    <section id="results" class="section-pad results-section">
+      <div class="container">
+        <h2>Results</h2>
+        <p class="lead">Clear progress and consistency in coding and content creation.</p>
+        <div class="results-grid">
+          <article class="stat-card">
+            <h3><span class="stat-number" data-target="4">0</span>+</h3>
+            <p>Portfolio Projects Built</p>
+          </article>
+          <article class="stat-card">
+            <h3><span class="stat-number" data-target="20">0</span>+</h3>
+            <p>Videos Planned or Published</p>
+          </article>
+          <article class="stat-card">
+            <h3><span class="stat-number" data-target="3">0</span></h3>
+            <p>Core Web Technologies</p>
+          </article>
+          <article class="stat-card">
+            <h3>Weekly</h3>
+            <p>Skill Improvement Habit</p>
+          </article>
+        </div>
+      </div>
+    </section>
 
     <section id="skills" class="section-pad skills-section">
       <div class="container">
         <h2>Skills</h2>
-        <p class="lead">Technologies I use and improve every week.</p>
-        <div class="skills-grid"></div>
-
+        <p class="lead">Core technologies I use to build and improve projects every week.</p>
+        <div class="skills-grid">
           <article class="skill-card">
             <div class="skill-head">
               <span>HTML</span>
@@ -58,16 +95,23 @@
           <article class="skill-card">
             <div class="skill-head">
               <span>CSS</span>
-              <span>80%</span>
+              <span>82%</span>
             </div>
-            <div class="meter"><span style="width: 80%"></span></div>
+            <div class="meter"><span style="width: 82%"></span></div>
           </article>
           <article class="skill-card">
             <div class="skill-head">
               <span>JavaScript</span>
-              <span>75%</span>
+              <span>76%</span>
             </div>
-            <div class="meter"><span style="width: 75%"></span></div>
+            <div class="meter"><span style="width: 76%"></span></div>
+          </article>
+          <article class="skill-card">
+            <div class="skill-head">
+              <span>Responsive Design</span>
+              <span>84%</span>
+            </div>
+            <div class="meter"><span style="width: 84%"></span></div>
           </article>
         </div>
       </div>
@@ -76,45 +120,110 @@
     <section id="projects" class="section-pad projects-section">
       <div class="container">
         <h2>Projects</h2>
-        <p class="lead">My latest coding work and content ideas.</p>
+        <p class="lead">Projects with clear purpose, clean interface, and practical outcomes.</p>
+        <div class="project-filters" role="toolbar" aria-label="Project filters">
+          <button class="filter-btn is-active" type="button" data-filter="all" aria-pressed="true">All</button>
+          <button class="filter-btn" type="button" data-filter="web" aria-pressed="false">Web</button>
+          <button class="filter-btn" type="button" data-filter="javascript" aria-pressed="false">JavaScript</button>
+          <button class="filter-btn" type="button" data-filter="content" aria-pressed="false">Content</button>
+        </div>
 
-        <section class="project-grid">
-          <article class="project-card">
-            <h2>Study Planner App</h2>
-            <p>Tracks homework, classes, and tests with a clean student dashboard.</p>
+        <div class="project-grid">
+          <article class="project-card" data-tags="web javascript">
+            <h3>Study Planner App</h3>
+            <p>Helps students organize assignments, classes, and test deadlines in one place.</p>
+            <ul class="project-points">
+              <li>Problem solved: missed deadlines</li>
+              <li>Built with: HTML, CSS, JavaScript</li>
+              <li>Result: easier daily planning flow</li>
+            </ul>
+            <div class="badge-list">
+              <span>UI</span><span>Forms</span><span>Dashboard</span>
+            </div>
+            <div class="project-actions">
+              <a class="mini-btn" href="#contact">Request Demo</a>
+            </div>
           </article>
-          <article class="project-card">
-            <h2>JavaScript Quiz Zone</h2>
-            <p>An interactive quiz app with score tracking and multiple categories.</p>
+
+          <article class="project-card" data-tags="web javascript">
+            <h3>JavaScript Quiz Zone</h3>
+            <p>Interactive quiz app with score tracking, categories, and instant answer feedback.</p>
+            <ul class="project-points">
+              <li>Problem solved: boring practice methods</li>
+              <li>Built with: JavaScript logic and UI states</li>
+              <li>Result: engaging self-practice experience</li>
+            </ul>
+            <div class="badge-list">
+              <span>Quiz Logic</span><span>Score System</span><span>UX</span>
+            </div>
+            <div class="project-actions">
+              <a class="mini-btn" href="#contact">Request Demo</a>
+            </div>
           </article>
-          <article class="project-card">
-            <h2>YouTube Gaming Channel</h2>
-            <p>Short Gaming videos, mini tutorials, and project walkthroughs.</p>
+
+          <article class="project-card" data-tags="content">
+            <h3>Gaming + Tech YouTube Workflow</h3>
+            <p>Content system for planning, recording, and posting short gaming and coding videos.</p>
+            <ul class="project-points">
+              <li>Problem solved: inconsistent posting</li>
+              <li>Built with: planning templates and editing flow</li>
+              <li>Result: consistent creator discipline</li>
+            </ul>
+            <div class="badge-list">
+              <span>Content</span><span>Editing</span><span>Consistency</span>
+            </div>
+            <div class="project-actions">
+              <a class="mini-btn" href="https://www.youtube.com/@KryloBlox60" target="_blank" rel="noopener noreferrer">Watch Channel</a>
+            </div>
           </article>
-          <article class="project-card">
-            <h2>Portfolio Website</h2>
-            <p>A responsive personal portfolio with skills, projects, and contact links.</p>
+
+          <article class="project-card" data-tags="web">
+            <h3>Portfolio Website</h3>
+            <p>Single-page personal site showing profile, skills, projects, and contact pathways.</p>
+            <ul class="project-points">
+              <li>Problem solved: no central profile website</li>
+              <li>Built with: semantic HTML + modern CSS</li>
+              <li>Result: professional online presence</li>
+            </ul>
+            <div class="badge-list">
+              <span>Branding</span><span>Responsive</span><span>SEO Basics</span>
+            </div>
+            <div class="project-actions">
+              <a class="mini-btn" href="#home">Live Here</a>
+            </div>
           </article>
-        </section>
+        </div>
+      </div>
+    </section>
+
+    <section id="learning" class="section-pad learning-section">
+      <div class="container learning-grid">
+        <article class="learning-card">
+          <h2>Currently Learning</h2>
+          <p class="lead">I am improving with hands-on projects and regular practice sessions.</p>
+          <ul class="project-points">
+            <li>JavaScript fundamentals and DOM interactions</li>
+            <li>Responsive layouts and better UI structure</li>
+            <li>Clean project presentation for competitions</li>
+          </ul>
+        </article>
+        <article class="learning-card quote-card">
+          <h2>Mentor Feedback</h2>
+          <p>"Krishiv is consistent, curious, and keeps improving every week through project-based learning."</p>
+          <span>- Project Mentor</span>
+        </article>
       </div>
     </section>
 
     <section id="contact" class="section-pad contact-section">
       <div class="container">
         <h2>Contact</h2>
-        <p class="lead">Let us connect and build something cool.</p>
-
-        <section class="contact-list">
-          <a class="contact-item" href="https://discord.gg/QZ3KfPsH4Y" target="_blank" rel="noopener noreferrer">
-            Discord Server
-          </a>
-          <a class="contact-item" href="https://www.youtube.com/@KryloBlox60" target="_blank" rel="noopener noreferrer">
-            YouTube: @KryloBlox60
-          </a>
-          <a class="contact-item" href="mailto:krylobloxyt@gmail.com">
-            Gmail: Krylobloxyt@gmail.com
-          </a>
-        </section>
+        <p class="lead">Open to collaboration, learning opportunities, and project discussions.</p>
+        <div class="contact-list">
+          <a class="contact-item" href="https://discord.gg/QZ3KfPsH4Y" target="_blank" rel="noopener noreferrer">Discord Server</a>
+          <a class="contact-item" href="https://www.youtube.com/@KryloBlox60" target="_blank" rel="noopener noreferrer">YouTube: @KryloBlox60</a>
+          <a class="contact-item" href="mailto:krylobloxyt@gmail.com">Gmail: krylobloxyt@gmail.com</a>
+        </div>
       </div>
     </section>
   </main>
@@ -122,8 +231,107 @@
   <footer class="site-footer">
     <div class="container footer-row">
       <p>© 2026 Krishiv P B. All rights reserved.</p>
+      <a href="#home">Back to top</a>
     </div>
   </footer>
+
+  <script>
+    const pageLoader = document.getElementById('pageLoader');
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
+    window.addEventListener('load', () => {
+      if (window.location.hash && window.location.hash !== '#home') {
+        history.replaceState(null, '', window.location.pathname + window.location.search);
+      }
+      window.scrollTo({ top: 0, behavior: 'auto' });
+      if (pageLoader) {
+        pageLoader.classList.add('is-hidden');
+        setTimeout(() => pageLoader.remove(), 420);
+      }
+    });
+
+    const links = document.querySelectorAll('.nav-links a');
+    const sections = document.querySelectorAll('main section[id]');
+    const revealTargets = document.querySelectorAll(
+      '.hero-grid > div, .hero-card, .results-grid > *, .skills-grid > *, .project-grid > *, .learning-grid > *, .contact-list > *'
+    );
+
+    revealTargets.forEach((el, index) => {
+      el.classList.add('reveal-item');
+      el.style.setProperty('--reveal-delay', (index % 6) * 70 + 'ms');
+    });
+
+    const revealObserver = new IntersectionObserver((entries, observerRef) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observerRef.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.16, rootMargin: '0px 0px -8% 0px' });
+
+    revealTargets.forEach((item) => revealObserver.observe(item));
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          links.forEach((link) => link.classList.remove('active'));
+          const active = document.querySelector('.nav-links a[href="#' + entry.target.id + '"]');
+          if (active) active.classList.add('active');
+        }
+      });
+    }, { rootMargin: '-45% 0px -45% 0px', threshold: 0.1 });
+
+    sections.forEach((section) => observer.observe(section));
+
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const projectCards = document.querySelectorAll('.project-card');
+
+    filterButtons.forEach((button) => {
+      button.addEventListener('click', () => {
+        const filter = button.dataset.filter;
+        filterButtons.forEach((btn) => {
+          btn.classList.remove('is-active');
+          btn.setAttribute('aria-pressed', 'false');
+        });
+        button.classList.add('is-active');
+        button.setAttribute('aria-pressed', 'true');
+
+        projectCards.forEach((card) => {
+          const tags = card.dataset.tags || '';
+          const show = filter === 'all' || tags.includes(filter);
+          card.style.display = show ? '' : 'none';
+        });
+      });
+    });
+
+    const counters = document.querySelectorAll('.stat-number');
+    const counterObserver = new IntersectionObserver((entries, obs) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        const el = entry.target;
+        const target = Number(el.dataset.target || 0);
+        let current = 0;
+        const step = Math.max(1, Math.ceil(target / 24));
+        const tick = () => {
+          current = Math.min(target, current + step);
+          el.textContent = String(current);
+          if (current < target) requestAnimationFrame(tick);
+        };
+        tick();
+        obs.unobserve(el);
+      });
+    }, { threshold: 0.6 });
+
+    counters.forEach((counter) => counterObserver.observe(counter));
+
+    const spotlight = document.getElementById('spotlight');
+    window.addEventListener('pointermove', (event) => {
+      if (!spotlight) return;
+      spotlight.style.setProperty('--spot-x', event.clientX + 'px');
+      spotlight.style.setProperty('--spot-y', event.clientY + 'px');
+    });
+  </script>
 </body>
 </html>
-
